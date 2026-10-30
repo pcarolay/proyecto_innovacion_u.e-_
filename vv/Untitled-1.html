@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Página institucional de la Unidad Educativa Técnico Humanístico Hugo Ordóñez Saravia.">
+
+<title>Unidad Educativa Técnico Humanístico Hugo Ordóñez Saravia</title>
+
+<style>
+:root{
+--navy:#061747;
+--navy2:#0b2459;
+--gold:#f4b51c;
+--ink:#111a32;
+--muted:#596274;
+--pale:#f5f7fb;
+--teal:#78b6b7;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}
+a{color:inherit;text-decoration:none}
+
+.topbar{
+min-height:42px;background:var(--navy);color:#fff;
+display:flex;align-items:center;justify-content:space-between;
+padding:7px 4.8%;font-size:14px;gap:12px
+}
+.top-left,.social{display:flex;align-items:center;gap:10px}
+.cap{color:var(--gold);font-size:23px}
+.social{gap:9px}
+.social span{
+width:29px;height:29px;border-radius:50%;
+background:var(--gold);color:var(--navy);
+display:grid;place-items:center;font-weight:bold;font-size:14px
+}
+.phone{
+margin-left:14px!important;width:auto!important;
+padding:0 5px;border-radius:0!important;
+background:none!important;color:#fff!important
+}
+
+.header-main{
+min-height:140px;display:flex;align-items:center;
+gap:24px;padding:17px 4%;background:#fff;flex-wrap:wrap
+}
+.crest{
+width:112px;height:126px;flex:0 0 112px;
+border:4px solid var(--gold);
+border-radius:45% 45% 48% 48%;
+background:var(--navy);color:#fff;
+display:flex;align-items:center;justify-content:center;
+text-align:center;box-shadow:inset 0 0 0 3px white;overflow:hidden
+}
+.crest img{width:100%;height:100%;object-fit:contain;padding:5px}
+
+.brand{flex:1;min-width:230px}
+.brand .small{
+margin:0;text-transform:uppercase;
+letter-spacing:2px;font-size:19px
+}
+.brand h1{
+margin:2px 0;color:var(--navy);
+font-size:clamp(22px,2.6vw,36px);
+line-height:1.08;text-transform:uppercase;font-weight:900
+}
+.brand .slogan{
+margin:5px 0;color:#d49a16;
+font-family:Georgia,serif;font-style:italic;
+font-size:clamp(17px,2vw,25px)
+}
+
+nav{
+display:flex;align-items:center;justify-content:center;
+gap:clamp(12px,2vw,25px);font-size:12px;font-weight:bold;
+text-transform:uppercase;flex-wrap:wrap;width:100%
+}
+nav a{padding:10px 0;border-bottom:2px solid transparent}
+nav a:hover,nav a:first-child{border-color:var(--navy)}
+
+.hero{
+min-height:560px;position:relative;display:flex;
+align-items:center;overflow:hidden;
+background:
+linear-gradient(90deg,rgba(4,20,62,.95) 0%,
+rgba(5,24,70,.80) 35%,rgba(5,24,70,.35) 65%,
+rgba(5,24,70,.15) 100%),
+url("colegio-hos-jpg.jpeg")
+center/cover no-repeat;
+color:#fff
+}
+.hero:after{
+content:"";position:absolute;bottom:-42px;left:-2%;
+width:104%;height:90px;background:var(--navy);
+border-top:7px solid var(--gold);
+border-radius:0 0 50% 50%;transform:rotate(-1deg)
+}
+.hero-content{position:relative;z-index:1;padding:60px 7%;max-width:850px}
+.script{
+font-family:Georgia,serif;font-style:italic;
+color:var(--gold);font-size:clamp(30px,4vw,53px);margin:0 0 2px
+}
+.hero h2{
+font-size:clamp(34px,4.5vw,58px);line-height:1.06;
+text-transform:uppercase;margin:0;font-weight:900
+}
+.hero h2 strong{color:var(--gold);display:block}
+.hero p:not(.script){
+font-size:19px;line-height:1.6;max-width:600px;margin:18px 0 26px
+}
+.buttons{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+display:inline-flex;align-items:center;gap:10px;
+padding:16px 23px;border-radius:7px;
+background:var(--gold);color:var(--navy);
+font-weight:bold;text-transform:uppercase;
+border:2px solid var(--gold)
+}
+.btn:hover{filter:brightness(1.05);transform:translateY(-1px)}
+.btn.outline{background:transparent;border-color:white;color:white}
+.dots{
+position:absolute;z-index:2;bottom:54px;left:50%;
+display:flex;gap:13px;transform:translateX(-50%)
+}
+.dots i{width:12px;height:12px;background:#fff;border-radius:50%}
+.dots i:first-child{background:var(--gold)}
+
+.features{
+display:grid;grid-template-columns:repeat(4,1fr);
+padding:50px 4.5%;gap:0
+}
+.feature{
+display:flex;align-items:center;gap:17px;
+padding:8px 22px;border-right:1px solid #bbb
+}
+.feature:last-child{border:0}
+.round-icon{
+width:72px;height:72px;flex:0 0 72px;
+border-radius:50%;background:var(--navy);color:#fff;
+display:grid;place-items:center;font-size:27px
+}
+.feature:nth-child(even) .round-icon{background:var(--gold);color:#fff}
+.feature h3{font-size:16px;margin:0 0 6px}
+.feature p{font-size:14px;line-height:1.55;margin:0}
+
+.section{padding:74px 7%}
+.section.soft{background:#f5f6f8}
+.eyebrow{
+font-size:13px;color:#338c91;font-weight:bold;
+letter-spacing:1.4px;text-transform:uppercase;margin:0 0 12px
+}
+.section h2{
+font-size:clamp(28px,3.4vw,40px);
+margin:0 0 15px;color:var(--navy)
+}
+.section-intro{max-width:760px;color:#4e596b;line-height:1.7}
+
+.history-layout{
+display:grid;grid-template-columns:1fr 1fr;
+gap:55px;align-items:center
+}
+.timeline{
+position:relative;padding-left:28px;
+border-left:2px solid #80b8b8;margin:24px 0 0 10px
+}
+.event{position:relative;padding:0 0 23px 12px}
+.event:before{
+content:"";position:absolute;left:-39px;top:4px;
+width:13px;height:13px;border:3px solid #80b8b8;
+background:#fff;border-radius:50%
+}
+.event b{color:var(--navy);display:block;margin-bottom:5px}
+
+.photo-stack{display:grid;gap:16px}
+.photo-stack img{
+width:100%;height:175px;object-fit:cover;border-radius:22px;
+display:block
+}
+
+.mision-vision{
+display:grid;grid-template-columns:1fr 1fr;
+gap:28px;margin-top:35px
+}
+.mv-card{
+background:#fff;border:1px solid #d5e1e2;
+border-radius:14px;padding:35px 30px;text-align:center;
+box-shadow:0 5px 18px #06174710;transition:.3s
+}
+.mv-card:hover{transform:translateY(-5px);box-shadow:0 10px 25px #0617471f}
+.mv-icon{
+width:68px;height:68px;margin:0 auto 18px;
+border-radius:50%;background:#e9f3f3;color:#438e94;
+display:grid;place-items:center;font-size:25px;font-weight:bold
+}
+.mv-card h3{color:var(--navy);font-size:21px;margin:0 0 12px}
+.mv-card p{color:var(--muted);line-height:1.7;font-size:14px;margin:0 0 15px}
+
+.mv-extra{
+display:grid;grid-template-columns:repeat(3,1fr);
+gap:18px;margin-top:25px
+}
+.mv-extra div{
+background:#fff;padding:22px;border-radius:14px;
+border:1px solid #d7e2e3
+}
+.mv-extra strong{color:var(--navy);font-size:16px}
+.mv-extra p{color:var(--muted);font-size:13px;line-height:1.6;margin-bottom:0}
+
+.values-grid{
+display:grid;grid-template-columns:repeat(5,1fr);
+gap:18px;margin-top:38px
+}
+.value{text-align:center}
+.value-icon{
+width:72px;height:72px;border:1px solid #a9caca;
+border-radius:50%;margin:auto;display:grid;place-items:center;
+color:#438e94;font-size:25px;background:#fff;transition:.3s
+}
+.value:hover .value-icon{
+background:var(--navy);color:#fff;transform:translateY(-5px)
+}
+.value h4{margin:12px 0 0;font-size:13px;color:var(--navy)}
+.value p{
+color:var(--muted);font-size:12px;line-height:1.5;
+margin:8px auto 0;max-width:180px
+}
+.values-message{
+margin-top:40px;background:var(--navy);color:#fff;
+border-radius:16px;padding:30px;text-align:center
+}
+.values-message h3{margin-top:0;color:var(--gold);font-size:22px}
+.values-message p{max-width:800px;margin:auto;line-height:1.7;color:#e0e6f3}
+
+.gallery-intro{max-width:700px}
+.gallery{
+display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+gap:14px;max-width:900px;margin-top:30px
+}
+.gallery-item{
+position:relative;overflow:hidden;border-radius:10px;
+height:220px;background:var(--navy)
+}
+.gallery-item img{
+width:100%;height:100%;object-fit:cover;
+display:block;transition:.4s
+}
+.gallery-item:hover img{transform:scale(1.07)}
+.gallery-caption{
+position:absolute;left:0;right:0;bottom:0;padding:35px 15px 14px;
+background:linear-gradient(transparent,rgba(6,23,71,.92));
+color:#fff;display:flex;flex-direction:column
+}
+.gallery-caption strong{font-size:15px}
+.gallery-caption span{font-size:11px;margin-top:4px;color:#e7edf7}
+
+.news-grid{
+display:grid;grid-template-columns:repeat(3,1fr);
+gap:20px;margin-top:28px
+}
+.news-card{
+border:1px solid #d7e2e3;border-radius:14px;
+overflow:hidden;background:#fff
+}
+.news-card .news-icon{
+height:125px;background:linear-gradient(135deg,var(--navy),#28528a);
+display:grid;place-items:center;color:var(--gold);font-size:32px;font-weight:bold
+}
+.news-card div:last-child{padding:20px}
+.news-card h3{color:var(--navy);margin:0 0 10px}
+.news-card p{color:var(--muted);font-size:14px;line-height:1.6;margin:0}
+
+.contact{
+background:var(--navy);color:#fff;padding:55px 7%;
+display:grid;grid-template-columns:1.3fr 1fr;gap:30px
+}
+.contact h2{color:#fff}
+.contact p{line-height:1.7;color:#e0e6f3}
+.contact-card{background:#fff;color:var(--ink);padding:26px;border-radius:16px}
+.contact-card h3{margin-top:0;color:var(--navy)}
+.contact-card p{color:var(--muted);margin:10px 0}
+.contact-card .btn{margin-top:12px}
+
+footer{
+background:#031033;color:#c9d1e4;
+text-align:center;padding:24px;font-size:13px
+}
+footer strong{color:#fff}
+
+@media(max-width:1050px){
+.features{grid-template-columns:repeat(2,1fr);row-gap:20px}
+.feature:nth-child(2){border-right:0}
+.values-grid{grid-template-columns:repeat(3,1fr);row-gap:28px}
+.mv-extra{grid-template-columns:1fr 1fr}
+.header-main{gap:15px}
+.news-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:650px){
+.topbar{padding:7px 4%;font-size:11px}
+.social{gap:5px}
+.social span{width:24px;height:24px}
+.phone{display:none!important}
+.header-main{gap:12px;padding:14px 5%}
+.crest{width:72px;height:86px;flex-basis:72px}
+.brand{min-width:0}
+.brand .small{font-size:12px}
+.brand h1{font-size:19px}
+.brand .slogan{font-size:15px}
+nav{justify-content:flex-start;gap:12px;font-size:10px}
+.hero{min-height:520px;background-position:60% center}
+.hero-content{padding:45px 6%}
+.hero p:not(.script){font-size:16px}
+.btn{padding:13px 15px;font-size:12px}
+.features{grid-template-columns:1fr;padding:35px 5%}
+.feature,.feature:nth-child(2){
+border-right:0;border-bottom:1px solid #ddd;padding:15px 5px
+}
+.feature:last-child{border-bottom:0}
+.round-icon{width:58px;height:58px;flex-basis:58px}
+.section{padding:50px 6%}
+.history-layout{grid-template-columns:1fr;gap:28px}
+.photo-stack img{height:150px}
+.mision-vision{grid-template-columns:1fr}
+.mv-extra{grid-template-columns:1fr}
+.values-grid{grid-template-columns:repeat(2,1fr)}
+.gallery{grid-template-columns:1fr 1fr;gap:10px}
+.gallery-item{height:155px}
+.gallery-caption{padding:25px 8px 8px}
+.gallery-caption strong{font-size:11px}
+.gallery-caption span{font-size:9px}
+.contact{grid-template-columns:1fr;padding:45px 6%}
+.news-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  <div class="top-left">
+    <span class="cap">◆</span>
+    <strong>Formando líderes con valores</strong>
+  </div>
+  <div class="social">
+    <span aria-label="Facebook">f</span>
+    <span aria-label="Instagram">◎</span>
+    <span aria-label="YouTube">▶</span>
+    <span class="phone">Teléfono: +591 72596963</span>
+  </div>
+</div>
+
+<header class="header-main" id="inicio">
+
+  <div class="crest">
+    <img
+      src="logo-colegio.jpg.jpeg"
+      alt="Imagen provisional del colegio"
+      onerror="this.style.display='none'">
+  </div>
+
+  <div class="brand">
+    <p class="small">Unidad Educativa</p>
+    <h1>Técnico Humanístico<br>Hugo Ordóñez Saravia</h1>
+    <p class="slogan">Formamos hoy, líderes del mañana</p>
+  </div>
+
+  <nav aria-label="Navegación principal">
+    <a href="#inicio">Inicio</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#mision-vision">Misión y Visión</a>
+    <a href="#valores">Valores</a>
+    <a href="#estudiantes">Estudiantes</a>
+    <a href="#galeria">Galería</a>
+    <a href="#noticias">Noticias</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="hero-content">
+    <p class="script">Bienvenidos a la U.E</p>
+
+    <h2>
+      Técnico Humanístico
+      <strong>Hugo Ordóñez Saravia</strong>
+    </h2>
+
+    <p>
+      Formamos estudiantes íntegros, críticos y solidarios,
+      preparados para construir un mejor futuro.
+    </p>
+
+    <div class="buttons">
+      <a class="btn" href="#nosotros">Conoce más</a>
+      <a class="btn outline" href="#contacto">Información institucional</a>
+    </div>
+  </div>
+
+  <div class="dots" aria-hidden="true">
+    <i></i><i></i><i></i><i></i><i></i><i></i>
+  </div>
+</section>
+
+<section class="features" id="estudiantes">
+
+  <div class="feature">
+    <div class="round-icon">◆</div>
+    <div>
+      <h3>Educación de calidad</h3>
+      <p>Enseñanza integral para la vida.</p>
+    </div>
+  </div>
+
+  <div class="feature">
+    <div class="round-icon">✓</div>
+    <div>
+      <h3>Formación en valores</h3>
+      <p>Respeto, responsabilidad y honestidad.</p>
+    </div>
+  </div>
+
+  <div class="feature">
+    <div class="round-icon">▤</div>
+    <div>
+      <h3>Docentes capacitados</h3>
+      <p>Profesionales comprometidos con tu aprendizaje.</p>
+    </div>
+  </div>
+
+  <div class="feature">
+    <div class="round-icon">▥</div>
+    <div>
+      <h3>Infraestructura educativa</h3>
+      <p>Espacios para tu desarrollo.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="section soft" id="nosotros">
+
+  <div class="history-layout">
+
+    <div>
+      <p class="eyebrow">1. Nosotros – Historia del colegio</p>
+      <h2>Nuestra Historia</h2>
+
+      <p class="section-intro">
+        Desde nuestros inicios, trabajamos con dedicación para brindar educación de calidad.
+      </p>
+
+      <div class="timeline">
+
+        <div class="event">
+          <b>2017</b>
+          <span>la unidad educativa tecnico humanistico pleno hugo ordoñez saravia se encontraba en la fase final de la construccion de su nueva y moderna infraestructura.</span>
+        </div>
+
+        <div class="event">
+          <b>2018</b>
+          <span>inaguracion del modulo:El 24 de marzo de 2018, el gobierno nacional inagura formalmente su infraestructura moderna de 16 aulas,laboratorios y talleres.</span>
+        </div>
+
+        <div class="event">
+          <b>2024</b>
+          <span>muro perimetral:En noviembre de ese año el gobierno autonomo municipal de viacha realiza la entrega del muro perimetral para resfuardar la seguridad de la comunidad estudiantil.</span>
+        </div>
+
+        <div class="event">
+          <b>2026</b>
+          <span>La unidad educativa alcanza sus 9 años de trayectoria institucional, destacandose por su participacion civica y desfiles nocturnos anuales en conmemoracion al Dia del Mar.</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="photo-stack">
+      <img
+        src="hugo-ordoñez-s.jpg.jpeg"
+        alt="Edificio educativo"
+        loading="lazy">
+
+      <img
+        src="c:\Users\VANESA\Downloads\curso.jpg"
+        alt="Aula de clases"
+        loading="lazy">
+    </div>
+
+  </div>
+</section>
+
+<section class="section soft" id="mision-vision">
+
+  <p class="eyebrow">2. Nosotros – Misión y Visión</p>
+  <h2>Misión y Visión</h2>
+
+  <p class="section-intro">
+    Nuestra institución tiene como propósito brindar una educación integral que permita a cada estudiante desarrollar sus capacidades, fortalecer sus valores y prepararse para afrontar los desafíos de la sociedad actual.
+  </p>
+
+  <div class="mision-vision">
+
+    <div class="mv-card">
+      <div class="mv-icon">M</div>
+      <h3>Misión</h3>
+
+      <p>La unidad educativa contribuye a mejorar la calidad de enseñanza y aprendizaje,equidad,reciprocida y productiva desarrollando un cambio ideologico en el proceso de aprendizaje utilizando metodologias que permitan generar el descubrimiento de identidad del estudiante con la participacion de la comunidad educativa.</p>
+
+      <p>Buscamos formar estudiantes responsables, críticos, creativos, solidarios y comprometidos con su comunidad, capaces de participar activamente en la construcción de una sociedad más justa y equitativa.</p>
+    </div>
+
+    <div class="mv-card">
+      <div class="mv-icon">V</div>
+      <h3>Visión</h3>
+
+      <p>La unidad educativa otorga un servicio de educacion integral, con equidad,calidad productiva que permite alcanzar las exigencias cognitivas y socio afectivas de las y los estudiantes para la convivencia armonica cuidando nuestra identidad cultural.</p>
+
+      <p>Aspiramos a formar jóvenes preparados para continuar sus estudios, incorporarse al mundo laboral y aportar con responsabilidad, liderazgo e innovación al desarrollo de nuestra comunidad.</p>
+    </div>
+
+  </div>
+
+  <div class="mv-extra">
+
+    <div>
+      <strong>Formación integral</strong>
+      <p>Desarrollamos conocimientos académicos junto con valores, habilidades sociales y capacidades prácticas.</p>
+    </div>
+
+    <div>
+      <strong>Innovación</strong>
+      <p>Promovemos el uso responsable de la tecnología y nuevas formas de aprendizaje.</p>
+    </div>
+
+    <div>
+      <strong>Compromiso social</strong>
+      <p>Motivamos a nuestros estudiantes a participar y contribuir positivamente en su comunidad.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="valores">
+
+  <p class="eyebrow">3. Nosotros – Valores Institucionales</p>
+  <h2>Nuestros Valores</h2>
+
+  <p class="section-intro">
+    Los valores son la base de nuestra comunidad educativa. Orientan nuestras acciones y nos ayudan a construir relaciones basadas en el respeto, la responsabilidad y la convivencia.
+  </p>
+
+  <div class="values-grid">
+
+    <div class="value">
+      <div class="value-icon">R</div>
+      <h4>Respeto</h4>
+      <p>Reconocemos y valoramos la dignidad, las ideas y las diferencias de cada integrante de nuestra comunidad.</p>
+    </div>
+
+    <div class="value">
+      <div class="value-icon">✓</div>
+      <h4>Responsabilidad</h4>
+      <p>Cumplimos nuestros deberes y asumimos las consecuencias de nuestras decisiones y acciones.</p>
+    </div>
+
+    <div class="value">
+      <div class="value-icon">H</div>
+      <h4>Honestidad</h4>
+      <p>Actuamos con sinceridad, transparencia e integridad en nuestras actividades diarias.</p>
+    </div>
+
+    <div class="value">
+      <div class="value-icon">S</div>
+      <h4>Solidaridad</h4>
+      <p>Ayudamos a los demás y trabajamos juntos para superar dificultades y alcanzar objetivos comunes.</p>
+    </div>
+
+    <div class="value">
+      <div class="value-icon">E</div>
+      <h4>Excelencia</h4>
+      <p>Buscamos mejorar continuamente nuestro aprendizaje, nuestro trabajo y nuestro desempeño.</p>
+    </div>
+
+  </div>
+
+  <div class="values-message">
+    <h3>Una comunidad que aprende y crece junta</h3>
+    <p>En nuestra institución creemos que la educación no consiste únicamente en adquirir conocimientos. También significa aprender a convivir, respetar a los demás, trabajar en equipo, tomar buenas decisiones y utilizar nuestras capacidades para contribuir al bienestar de la sociedad.</p>
+  </div>
+
+</section>
+
+<section class="section soft" id="galeria">
+
+  <p class="eyebrow">4. Galería – Nuestra Unidad Educativa</p>
+  <h2>Conoce nuestra Unidad Educativa</h2>
+
+  <p class="section-intro gallery-intro">
+    Una muestra de los espacios y momentos de nuestra Unidad Educativa Técnico Humanístico Hugo Ordóñez Saravia.
+  </p>
+
+  <div class="gallery">
+
+    <div class="gallery-item">
+      <img
+        src="estudiantes-hos.jpg"
+        alt="Estudiantes en clase"
+        loading="lazy">
+      <div class="gallery-caption">
+        <strong>Nuestra Unidad Educativa</strong>
+        <span>Estudiantes representando a nuestro colegio</span>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <img
+        src="fachada.jpg"
+        alt="Fachada de un edificio educativo"
+        loading="lazy">
+      <div class="gallery-caption">
+        <strong>Fachada del colegio</strong>
+        <span>Nuestra institución</span>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <img
+        src="aula.jpg"
+        alt="Aula de clases"
+        loading="lazy">
+      <div class="gallery-caption">
+        <strong>Aula de clases</strong>
+        <span>Espacios de aprendizaje</span>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <img
+        src="biblioteca.jpg"
+        alt="Biblioteca educativa"
+        loading="lazy">
+      <div class="gallery-caption">
+        <strong>Comunidad estudiantil</strong>
+        <span>Formando líderes del mañana</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="noticias">
+
+  <p class="eyebrow">5. Actualidad institucional</p>
+  <h2>Noticias y Actividades</h2>
+
+  <p class="section-intro">
+    Compartimos espacios para aprender, convivir y crecer como comunidad educativa.
+  </p>
+
+  <div class="news-grid">
+
+    <article class="news-card">
+      <div class="news-icon">A</div>
+      <div>
+        <h3>Formación académica</h3>
+        <p>Impulsamos el aprendizaje y el desarrollo de habilidades para preparar a nuestros estudiantes para nuevos desafíos.</p>
+      </div>
+    </article>
+
+    <article class="news-card">
+      <div class="news-icon">V</div>
+      <div>
+        <h3>Convivencia y valores</h3>
+        <p>Promovemos el respeto, la solidaridad y la participación responsable dentro de nuestra comunidad.</p>
+      </div>
+    </article>
+
+    <article class="news-card">
+      <div class="news-icon">I</div>
+      <div>
+        <h3>Aprender para el futuro</h3>
+        <p>Fomentamos la creatividad, el pensamiento crítico y el uso responsable de la tecnología.</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+
+  <div>
+    <p class="eyebrow" style="color:var(--gold)">Estamos para ayudarte</p>
+    <h2>Contacto institucional</h2>
+
+    <p>Gracias por visitar la página de la Unidad Educativa Técnico Humanístico Hugo Ordóñez Saravia. Para consultas sobre inscripciones, actividades o información institucional, comunícate con la administración del colegio.</p>
+
+    <p><strong>Teléfono:</strong> +591 72596963</p>
+    <p>Los datos de contacto deben confirmarse con la institución antes de publicar la página.</p>
+  </div>
+
+  <div class="contact-card">
+    <h3>Información de contacto</h3>
+    <p>Unidad Educativa Técnico Humanístico Hugo Ordóñez Saravia</p>
+    <p>+591 72596963</p>
+    <p>Agrega aquí el correo oficial de la institución</p>
+    <a class="btn" href="tel:+59171234567">Llamar al colegio</a>
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+  <strong>Unidad Educativa Técnico Humanístico Hugo Ordóñez Saravia</strong>
+  <p>Formamos hoy, líderes del mañana.</p>
+  <span>© <span id="year">2026</span> Todos los derechos reservados.</span>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
